@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            //Public Key
+            emailjs.init('Z4LVCQY0lMnUhVwzv');
+        })();
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">My Profile</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#gallery">My Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Hello, I'm <span class="highlight">Huynh Ngoc Hau</span></h1>
+                    <p>Back-End Developer</p>
+                    <div class="hero-btns">
+                        <a href="#projects" class="btn primary-btn">My Work</a>
+                        <a href="#contact" class="btn secondary-btn">Contact Me</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="images/avatar.jpg" alt="Profile Picture">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Hello !! My name is Hau, and I am currently a student at FPT University, specializing in Software Engineering. I am passionate about back-end development and aspire to build a successful career in this field.</p>
+                    <p>C# is the programming language I like the most, and I always try to improve my skills. When I'm not studying or working, I enjoy playing games, listening to music, and hanging out with my friends.</p>
+                </div>
+                <div class="skills">
+                    <h3>My Skills</h3>
+                    <div class="skill-item">
+                        <span class="skill-name">HTML/CSS</span>
+                        <div class="skill-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Java</span>
+                        <div class="skill-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">React</span>
+                        <div class="skill-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">C#</span>
+                        <div class="skill-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="images/project1.png" alt="Project 1">
+                    <div class="project-info">
+                        <h3>Koi Feng Shui Consulting System</h3>
+                        <p>A Koi fish Feng Shui consulting website built with React and C#.</p>
+                        <div class="project-links">
+                            <a href="#" class="btn small-btn">View Project</a>
+                            <a href="https://github.com/HauHuynh2k4/Web-Application-Koi-Feng-Shui-Consulting-System" class="btn small-btn">Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="images/project2.jpg" alt="Project 2">
+                    <div class="project-info">
+                        <h3>Watch store Website</h3>
+                        <p>A watch store website built with Java, JSP, Servlet, JDBC.</p>
+                        <div class="project-links">
+                            <a href="#" class="btn small-btn">View Project</a>
+                            <a href="https://github.com/HauHuynh2k4/WatchManagement" class="btn small-btn">Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2 class="section-title">My Gallery</h2>
+            <div class="gallery-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="2023">2023</button>
+                <button class="filter-btn" data-filter="2024">2024</button>
+                <button class="filter-btn" data-filter="2025">2025</button>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item 2023">
+                    <img src="images/2023/1.jpg" alt="2023 Photo">
+                </div>
+                <div class="gallery-item 2023">
+                    <img src="images/2023/2.jpg" alt="2023 Photo">
+                </div>
+                <div class="gallery-item 2023">
+                    <img src="images/2023/3.jpg" alt="2023 Photo">
+                </div>
+                <div class="gallery-item 2023">
+                    <img src="images/2023/4.jpg" alt="2023 Photo">
+                </div>
+                <div class="gallery-item 2023">
+                    <img src="images/2023/5.jpg" alt="2023 Photo">
+                </div>
+                <div class="gallery-item 2023">
+                    <img src="images/2023/6.jpg" alt="2023 Photo">
+                </div>
+                <div class="gallery-item 2024">
+                    <img src="images/2024/1.jpg" alt="2024 Photo">
+                </div>
+                <div class="gallery-item 2024">
+                    <img src="images/2024/2.jpg" alt="2024 Photo">
+                </div>
+                <div class="gallery-item 2024">
+                    <img src="images/2024/3.jpg" alt="2024 Photo">
+                </div>
+                <div class="gallery-item 2024">
+                    <img src="images/2024/4.jpg" alt="2024 Photo">
+                </div>
+                <div class="gallery-item 2025">
+                    <img src="images/2025/1.jpg" alt="2025 Photo">
+                </div>
+                <div class="gallery-item 2025">
+                    <img src="images/2025/2.jpg" alt="2025 Photo">
+                </div>
+                <div class="gallery-item 2025">
+                    <img src="images/2025/3.jpg" alt="2025 Photo">
+                </div>
+                <div class="gallery-item 2025">
+                    <img src="images/2025/4.jpg" alt="2025 Photo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>ngochau1310@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>(+84) 0333006947</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Ho Chi Minh, Vietnam</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://github.com/HauHuynh2k4"><i class="fab fa-github"></i></a>
+                        <a href="https://www.facebook.com/hauu.huynh.2024/"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/iamhau_huynh/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@hauhuynh4479"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" required>
+                        <label for="name">Your Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" required>
+                        <label for="email">Your Email</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" required>
+                        <label for="subject">Subject</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" required></textarea>
+                        <label for="message">Your Message</label>
+                    </div>
+                    <button type="submit" class="btn primary-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 HauHuynh2k4. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox">
+        <div class="lightbox-content">
+            <img src="" alt="Lightbox Image" class="lightbox-img">
+            <button class="lightbox-close">&times;</button>
+            <button class="lightbox-prev">&lt;</button>
+            <button class="lightbox-next">&gt;</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
