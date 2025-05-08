@@ -22,6 +22,26 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Make external links open in new tab
+    function setExternalLinks() {
+        // Get all links
+        const allLinks = document.querySelectorAll('a');
+        const currentHost = window.location.hostname;
+
+        allLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            
+            // If it's an external link (starts with http/https and not the current domain)
+            if (href && href.startsWith('http') && !href.includes(currentHost) && !link.hasAttribute('target')) {
+                link.setAttribute('target', '_blank');
+                link.setAttribute('rel', 'noopener noreferrer'); // Security best practice
+            }
+        });
+    }
+    
+    // Call the function on page load
+    setExternalLinks();
+
     // Change header background on scroll
     window.addEventListener('scroll', function() {
         if (window.scrollY > 50) {
