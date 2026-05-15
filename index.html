@@ -1,261 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html data-theme="night">
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Website</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function() {
-            //Public Key
-            emailjs.init('Z4LVCQY0lMnUhVwzv');
-        })();
-    </script>
-</head>
-<body>
-    <header>
-        <nav>
-            <div class="logo">My Profile</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#gallery">My Gallery</a></li>
-                <li><a href="#contact">Contact</a></li>
+    <title>Huynh Ngoc Hau - Portfolio</title>
+    <meta name="description" content="Portfolio of Huynh Ngoc Hau — Back-End Developer specializing in ASP.NET Core, C#, and scalable REST APIs.">
+    <link rel="icon" href="assets/logo.png" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hubot+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>(function(){ emailjs.init('Z4LVCQY0lMnUhVwzv'); })();</script>
+
+    <style>
+      body { font-family: 'Hubot Sans', sans-serif; }
+    </style>
+  </head>
+  <body class="items-center">
+
+    <!-- ===== NAVBAR (inline — renders immediately, no async delay) ===== -->
+    <div class="fixed top-0 left-0 right-0 z-50 bg-base-100 shadow-md border-b border-base-300" id="navbar-wrapper">
+      <div class="w-[95%] mx-auto">
+        <div class="navbar">
+
+          <div class="navbar-start">
+            <div class="dropdown">
+              <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+                </svg>
+              </div>
+              <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                <li><a href="#experience-container">Resume</a></li>
+                <li><a href="#projects-container-wrapper">Projects</a></li>
+                <li>
+                  <a href="assets/cv.pdf" download="HauHuynh_CV.pdf" class="flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                    </svg>
+                    Download CV
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <a href="#" class="btn btn-ghost text-lg sm:text-xl truncate">Huynh Ngoc Hau</a>
+          </div>
+
+          <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1 text-lg xl:text-xl">
+              <li><a href="#experience-container">Resume</a></li>
+              <li><a href="#projects-container-wrapper">Projects</a></li>
             </ul>
-            <div class="hamburger">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-            </div>
-        </nav>
-    </header>
+          </div>
 
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Hello, I'm <span class="highlight">Huynh Ngoc Hau</span></h1>
-                    <p>Back-End Developer</p>
-                    <div class="hero-btns">
-                        <a href="#projects" class="btn primary-btn">My Work</a>
-                        <a href="#contact" class="btn secondary-btn">Contact Me</a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <img src="images/avatar.jpg" alt="Profile Picture">
-                </div>
-            </div>
-        </div>
-    </section>
+          <div class="navbar-end">
+            <div class="flex gap-1 sm:gap-2 items-center">
 
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Hello !! My name is Hau, and I am currently a student at FPT University, specializing in Software Engineering. I am passionate about back-end development and aspire to build a successful career in this field.</p>
-                    <p>C# is the programming language I like the most, and I always try to improve my skills. When I'm not studying or working, I enjoy playing games, listening to music, and hanging out with my friends.</p>
-                </div>
-                <div class="skills">
-                    <h3>My Skills</h3>
-                    <div class="skill-item">
-                        <span class="skill-name">HTML/CSS</span>
-                        <div class="skill-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <i class="far fa-star"></i>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">Java</span>
-                        <div class="skill-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <i class="far fa-star"></i>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">React</span>
-                        <div class="skill-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <i class="far fa-star"></i>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">C#</span>
-                        <div class="skill-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+              <!-- CV Download -->
+              <a href="assets/cv.pdf" download="HauHuynh_CV.pdf"
+                class="btn btn-ghost btn-sm sm:btn-md font-bold text-sm sm:text-base" title="Download CV">
+                CV
+              </a>
 
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">My Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <img src="images/project1.png" alt="Project 1">
-                    <div class="project-info">
-                        <h3>Koi Feng Shui Consulting System</h3>
-                        <p>A Koi fish Feng Shui consulting website built with React and C#.</p>
-                        <div class="project-links">
-                            <a href="#" class="btn small-btn" target="_blank">View Project</a>
-                            <a href="https://github.com/HauHuynh2k4/Web-Application-Koi-Feng-Shui-Consulting-System" class="btn small-btn" target="_blank">Code</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="images/project2.jpg" alt="Project 2">
-                    <div class="project-info">
-                        <h3>Watch store Website</h3>
-                        <p>A watch store website built with Java, JSP, Servlet, JDBC.</p>
-                        <div class="project-links">
-                            <a href="#" class="btn small-btn" target="_blank">View Project</a>
-                            <a href="https://github.com/HauHuynh2k4/WatchManagement" class="btn small-btn" target="_blank">Code</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+              <!-- GitHub -->
+              <a href="https://github.com/HauHuynh2k4" target="_blank" rel="noopener noreferrer"
+                class="btn btn-ghost btn-circle btn-sm sm:btn-md" title="GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 sm:size-6">
+                  <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.2-1.2-1.5-1.2-1.5-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 .1.8 2.2 3.7 1.5 0-.8.3-1.4.6-1.7-2.6-.3-5.4-1.3-5.4-5.9 0-1.3.5-2.4 1.2-3.3 0-.3-.5-1.5.1-3.2 0 0 1-.3 3.4 1.2 1-.3 2.1-.5 3.2-.5s2.2.2 3.2.5c2.4-1.5 3.4-1.2 3.4-1.2.6 1.7.1 2.9.1 3.2.7.9 1.2 2 1.2 3.3 0 4.6-2.8 5.6-5.4 5.9.4.4.7 1.1.7 2.1v3.1c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.65 18.35.5 12 .5Z"/>
+                </svg>
+              </a>
 
-    <section id="gallery" class="gallery">
-        <div class="container">
-            <h2 class="section-title">My Gallery</h2>
-            <div class="gallery-filter">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="2023">2023</button>
-                <button class="filter-btn" data-filter="2024">2024</button>
-                <button class="filter-btn" data-filter="2025">2025</button>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item 2023">
-                    <img src="images/2023/1.jpg" alt="2023 Photo">
-                </div>
-                <div class="gallery-item 2023">
-                    <img src="images/2023/2.jpg" alt="2023 Photo">
-                </div>
-                <div class="gallery-item 2023">
-                    <img src="images/2023/3.jpg" alt="2023 Photo">
-                </div>
-                <div class="gallery-item 2023">
-                    <img src="images/2023/4.jpg" alt="2023 Photo">
-                </div>
-                <div class="gallery-item 2023">
-                    <img src="images/2023/5.jpg" alt="2023 Photo">
-                </div>
-                <div class="gallery-item 2023">
-                    <img src="images/2023/6.jpg" alt="2023 Photo">
-                </div>
-                <div class="gallery-item 2024">
-                    <img src="images/2024/1.jpg" alt="2024 Photo">
-                </div>
-                <div class="gallery-item 2024">
-                    <img src="images/2024/2.jpg" alt="2024 Photo">
-                </div>
-                <div class="gallery-item 2024">
-                    <img src="images/2024/3.jpg" alt="2024 Photo">
-                </div>
-                <div class="gallery-item 2024">
-                    <img src="images/2024/4.jpg" alt="2024 Photo">
-                </div>
-                <div class="gallery-item 2025">
-                    <img src="images/2025/1.jpg" alt="2025 Photo">
-                </div>
-                <div class="gallery-item 2025">
-                    <img src="images/2025/2.jpg" alt="2025 Photo">
-                </div>
-                <div class="gallery-item 2025">
-                    <img src="images/2025/3.jpg" alt="2025 Photo">
-                </div>
-                <div class="gallery-item 2025">
-                    <img src="images/2025/4.jpg" alt="2025 Photo">
-                </div>
-            </div>
-        </div>
-    </section>
+              <!-- LinkedIn -->
+              <a href="https://www.linkedin.com/in/hậu-huỳnh-906827409" target="_blank" rel="noopener noreferrer"
+                class="btn btn-ghost btn-circle btn-sm sm:btn-md" title="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 sm:size-6">
+                  <path d="M20.45 20.45h-3.6v-5.3c0-1.3 0-2.9-1.7-2.9s-2 1.3-2 2.8v5.4h-3.6V9h3.5v1.6h.1c.5-1 1.7-2 3.6-2 3.8 0 4.5 2.5 4.5 5.7v6.1ZM5.34 7.43a2.1 2.1 0 1 1 0-4.21 2.1 2.1 0 0 1 0 4.21ZM7.15 20.45h-3.6V9h3.6v11.45Z"/>
+                </svg>
+              </a>
 
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Contact Me</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>ngochau1310@gmail.com</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <span>(+84) 0333006947</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Ho Chi Minh, Vietnam</span>
-                    </div>
-                    <div class="social-links">
-                        <a href="https://github.com/HauHuynh2k4" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://www.facebook.com/hauu.huynh.2024/" target="_blank"><i class="fab fa-facebook"></i></a>
-                        <a href="https://www.instagram.com/iamhau_huynh/" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/@hauhuynh4479" target="_blank"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <form class="contact-form">
-                    <div class="form-group">
-                        <input type="text" id="name" required>
-                        <label for="name">Your Name</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" required>
-                        <label for="email">Your Email</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" id="subject" required>
-                        <label for="subject">Subject</label>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" required></textarea>
-                        <label for="message">Your Message</label>
-                    </div>
-                    <button type="submit" class="btn primary-btn">Send Message</button>
-                </form>
+              <!-- Facebook -->
+              <a href="https://www.facebook.com/hauu.huynh.2024/" target="_blank" rel="noopener noreferrer"
+                class="btn btn-ghost btn-circle btn-sm sm:btn-md" title="Facebook">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 sm:size-6">
+                  <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.268h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073Z"/>
+                </svg>
+              </a>
+
+              <!-- Instagram -->
+              <a href="https://www.instagram.com/iamhau_huynh/" target="_blank" rel="noopener noreferrer"
+                class="btn btn-ghost btn-circle btn-sm sm:btn-md" title="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5 sm:size-6">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069ZM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0Zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324ZM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8Zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881Z"/>
+                </svg>
+              </a>
+
             </div>
+          </div>
         </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 HauHuynh2k4. All Rights Reserved.</p>
-        </div>
-    </footer>
-
-    <!-- Lightbox Modal -->
-    <div class="lightbox">
-        <div class="lightbox-content">
-            <img src="" alt="Lightbox Image" class="lightbox-img">
-            <button class="lightbox-close">&times;</button>
-            <button class="lightbox-prev">&lt;</button>
-            <button class="lightbox-next">&gt;</button>
-        </div>
+      </div>
     </div>
+    <!-- Spacer -->
+    <div class="h-16"></div>
 
-    <script src="js/script.js"></script>
-</body>
+    <!-- ===== DYNAMIC CONTENT ===== -->
+    <div id="presentation-container"></div>
+    <div id="experience-container" style="scroll-margin-top: 4rem;"></div>
+    <div id="projects-container-wrapper" style="scroll-margin-top: 4rem;"></div>
+    <div id="footer-container"></div>
+
+    <script src="js/main.js"></script>
+  </body>
 </html>

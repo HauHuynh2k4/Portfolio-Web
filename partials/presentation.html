@@ -1,0 +1,280 @@
+<section class="hero min-h-100 mb-20 mt-10">
+  <div class="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
+    <div class="w-full rounded-2xl shadow-2xl py-10 sm:py-14 lg:py-16 px-6 sm:px-12 lg:px-20 overflow-hidden relative"
+      style="background: linear-gradient(135deg, #060d1f 0%, #0a1a3a 45%, #0c2550 75%, #080f22 100%);">
+
+      <!-- Subtle grid -->
+      <div class="absolute inset-0 pointer-events-none"
+        style="background-image: linear-gradient(rgba(56,189,248,0.035) 1px, transparent 1px),
+               linear-gradient(90deg, rgba(56,189,248,0.035) 1px, transparent 1px);
+               background-size: 48px 48px;"></div>
+
+      <!-- Ambient glow behind avatar -->
+      <div class="absolute pointer-events-none"
+        style="right:6%; top:50%; transform:translateY(-50%);
+               width:460px; height:460px; border-radius:50%;
+               background:radial-gradient(circle, rgba(14,165,233,0.14) 0%, rgba(59,130,246,0.06) 45%, transparent 70%);
+               filter:blur(24px);"></div>
+
+      <div class="relative flex flex-col lg:flex-row-reverse items-center w-full gap-10 lg:gap-16">
+
+        <!-- ========== AVATAR + ORBITS ========== -->
+        <div class="flex-shrink-0 flex items-center justify-center">
+          <div class="os">
+
+            <!--
+              RINGS: scaleY makes them flat ellipses (horizontal).
+              rotateZ adds a very slight diagonal tilt per ring.
+              Rings do NOT animate — they are static.
+              DOTS: absolutely positioned, animate along their own
+              circular keyframe path that matches the ring's ellipse.
+            -->
+
+            <!-- Ring 1 — widest, tilt +10deg -->
+            <div class="ring" style="
+              width: 420px; height: 420px;
+              margin: -210px 0 0 -210px;
+              transform: scaleY(0.20) rotateZ(10deg);
+              border-color: rgba(56,189,248,0.35);
+              box-shadow: 0 0 10px rgba(56,189,248,0.12);"></div>
+
+            <!-- Ring 2 — medium, tilt -8deg -->
+            <div class="ring" style="
+              width: 360px; height: 360px;
+              margin: -180px 0 0 -180px;
+              transform: scaleY(0.18) rotateZ(-8deg);
+              border-color: rgba(96,165,250,0.22);
+              box-shadow: 0 0 8px rgba(96,165,250,0.08);"></div>
+
+            <!-- Ring 3 — smallest, nearly flat -->
+            <div class="ring" style="
+              width: 300px; height: 300px;
+              margin: -150px 0 0 -150px;
+              transform: scaleY(0.16) rotateZ(4deg);
+              border-color: rgba(147,197,253,0.16);"></div>
+
+            <!--
+              FLOATING DOTS — each dot is positioned around the avatar
+              and animates along an elliptical path using custom keyframes.
+              They are independent of the rings (no parent transform).
+            -->
+
+            <!-- Dot 1 — left side, ring 1 path -->
+            <span class="fdot" style="
+              width:8px; height:8px;
+              background:#38bdf8;
+              box-shadow:0 0 8px 3px rgba(56,189,248,0.95), 0 0 18px 6px rgba(56,189,248,0.4);
+              animation: orbit1-cw 14s linear infinite;"></span>
+
+            <!-- Dot 2 — opposite side, ring 1 -->
+            <span class="fdot" style="
+              width:7px; height:7px;
+              background:#7dd3fc;
+              box-shadow:0 0 7px 3px rgba(125,211,252,0.95), 0 0 14px 5px rgba(125,211,252,0.4);
+              animation: orbit1-cw 14s linear infinite;
+              animation-delay:-7s;"></span>
+
+            <!-- Dot 3 — ring 2 path -->
+            <span class="fdot" style="
+              width:7px; height:7px;
+              background:#60a5fa;
+              box-shadow:0 0 7px 3px rgba(96,165,250,0.95), 0 0 14px 5px rgba(96,165,250,0.4);
+              animation: orbit2-ccw 10s linear infinite;"></span>
+
+            <!-- Dot 4 — ring 2 opposite -->
+            <span class="fdot" style="
+              width:6px; height:6px;
+              background:#a5b4fc;
+              box-shadow:0 0 6px 2px rgba(165,180,252,0.95), 0 0 12px 4px rgba(165,180,252,0.4);
+              animation: orbit2-ccw 10s linear infinite;
+              animation-delay:-5s;"></span>
+
+            <!-- Dot 5 — ring 3 path -->
+            <span class="fdot" style="
+              width:6px; height:6px;
+              background:#bae6fd;
+              box-shadow:0 0 6px 2px rgba(186,230,253,0.95), 0 0 12px 4px rgba(186,230,253,0.4);
+              animation: orbit3-cw 7s linear infinite;"></span>
+
+            <!-- Dot 6 — ring 3 opposite -->
+            <span class="fdot" style="
+              width:5px; height:5px;
+              background:#e0f2fe;
+              box-shadow:0 0 5px 2px rgba(224,242,254,0.95), 0 0 10px 3px rgba(224,242,254,0.4);
+              animation: orbit3-cw 7s linear infinite;
+              animation-delay:-3.5s;"></span>
+
+            <!-- Avatar -->
+            <div class="av-wrap">
+              <div class="av-glow"></div>
+              <div class="av-border">
+                <div class="av-inner">
+                  <img src="assets/avatar.jpg" alt="Huynh Ngoc Hau" class="av-img"/>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ========== TEXT ========== -->
+        <div class="flex-1 w-full text-center lg:text-left">
+          <p class="text-sm font-semibold tracking-[0.25em] uppercase mb-3" style="color:#38bdf8;">
+            Back-End Developer
+          </p>
+          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight"
+            style="background: linear-gradient(100deg, #e0f2fe 0%, #7dd3fc 40%, #38bdf8 70%, #3b82f6 100%);
+                   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+            Hi, I'm Hau
+          </h1>
+          <div class="mt-4 mb-2 w-12 h-[2px] mx-auto lg:mx-0 rounded-full"
+            style="background: linear-gradient(90deg, #38bdf8, transparent);"></div>
+          <p class="py-4 sm:py-5 text-base sm:text-lg lg:text-xl max-w-2xl mx-auto lg:mx-0"
+            style="color:#94a3b8; line-height:1.85;">
+            Passionate about building scalable REST APIs and clean back-end systems.
+            My primary stack is
+            <span class="font-semibold" style="color:#7dd3fc;">ASP.NET Core / C#</span>
+            with PostgreSQL and SQL Server — from database design to Docker deployment.
+          </p>
+          <div class="flex flex-col gap-3 mt-4 sm:flex-row sm:gap-4 justify-center lg:justify-start">
+            <a href="#projects-container-wrapper" class="btn btn-primary btn-md sm:btn-lg">View my projects</a>
+            <a href="mailto:ngochau1310@gmail.com" class="btn btn-outline btn-md sm:btn-lg"
+              style="border-color:rgba(56,189,248,0.5); color:#7dd3fc;">Get in touch</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* Scene — centered reference point */
+.os {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Static ring — scaleY flattens, rotateZ tilts slightly */
+.ring {
+  position: absolute;
+  top: 50%; left: 50%;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  pointer-events: none;
+}
+
+/* Floating dot — positioned at center, moved by keyframe */
+.fdot {
+  position: absolute;
+  top: 50%; left: 50%;
+  border-radius: 50%;
+  pointer-events: none;
+  animation-timing-function: linear;
+}
+
+/* Avatar */
+.av-wrap {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.av-glow {
+  position: absolute;
+  width: 240px; height: 240px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(14,165,233,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.av-border {
+  width: 218px; height: 218px;
+  border-radius: 50%;
+  padding: 3px;
+  background: conic-gradient(from 0deg, #0ea5e9, #3b82f6, #38bdf8, #0284c7, #0ea5e9);
+  box-shadow:
+    0 0 22px rgba(14,165,233,0.65),
+    0 0 46px rgba(59,130,246,0.28),
+    0 0 72px rgba(59,130,246,0.12);
+}
+
+.av-inner {
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  padding: 3px;
+  background: #060d1f;
+  overflow: hidden;
+}
+
+.av-img {
+  width: 100%; height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+/*
+  Dot keyframes — each orbit matches its ring's ellipse.
+  Ring 1: scaleY(0.20) rotateZ(10deg) → rx≈210, ry≈42, tilt 10deg
+  Ring 2: scaleY(0.18) rotateZ(-8deg) → rx≈180, ry≈32, tilt -8deg
+  Ring 3: scaleY(0.16) rotateZ(4deg)  → rx≈150, ry≈24, tilt 4deg
+
+  Formula for tilted ellipse point:
+    x = rx·cos(t)·cos(tilt) - ry·sin(t)·sin(tilt)
+    y = rx·cos(t)·sin(tilt) + ry·sin(t)·cos(tilt)
+  We approximate with translate + rotate on the dot itself.
+*/
+
+/* Ring 1 orbit — rx=210, ry=42, tilt=10deg */
+@keyframes orbit1-cw {
+  0%   { transform: translate(calc(210px * 1.000), calc(42px *  0.000)); }
+  12%  { transform: translate(calc(210px * 0.780), calc(42px *  0.625)); }
+  25%  { transform: translate(calc(210px * 0.259), calc(42px *  0.966)); }
+  37%  { transform: translate(calc(210px *-0.454), calc(42px *  0.891)); }
+  50%  { transform: translate(calc(210px *-1.000), calc(42px *  0.000)); }
+  62%  { transform: translate(calc(210px *-0.780), calc(42px * -0.625)); }
+  75%  { transform: translate(calc(210px *-0.259), calc(42px * -0.966)); }
+  87%  { transform: translate(calc(210px * 0.454), calc(42px * -0.891)); }
+  100% { transform: translate(calc(210px * 1.000), calc(42px *  0.000)); }
+}
+
+/* Ring 2 orbit — rx=180, ry=32, tilt=-8deg */
+@keyframes orbit2-ccw {
+  0%   { transform: translate(calc(180px * 1.000), calc(32px *  0.000)); }
+  12%  { transform: translate(calc(180px * 0.780), calc(32px * -0.625)); }
+  25%  { transform: translate(calc(180px * 0.259), calc(32px * -0.966)); }
+  37%  { transform: translate(calc(180px *-0.454), calc(32px * -0.891)); }
+  50%  { transform: translate(calc(180px *-1.000), calc(32px *  0.000)); }
+  62%  { transform: translate(calc(180px *-0.780), calc(32px *  0.625)); }
+  75%  { transform: translate(calc(180px *-0.259), calc(32px *  0.966)); }
+  87%  { transform: translate(calc(180px * 0.454), calc(32px *  0.891)); }
+  100% { transform: translate(calc(180px * 1.000), calc(32px *  0.000)); }
+}
+
+/* Ring 3 orbit — rx=150, ry=24, tilt=4deg */
+@keyframes orbit3-cw {
+  0%   { transform: translate(calc(150px * 1.000), calc(24px *  0.000)); }
+  12%  { transform: translate(calc(150px * 0.780), calc(24px *  0.625)); }
+  25%  { transform: translate(calc(150px * 0.259), calc(24px *  0.966)); }
+  37%  { transform: translate(calc(150px *-0.454), calc(24px *  0.891)); }
+  50%  { transform: translate(calc(150px *-1.000), calc(24px *  0.000)); }
+  62%  { transform: translate(calc(150px *-0.780), calc(24px * -0.625)); }
+  75%  { transform: translate(calc(150px *-0.259), calc(24px * -0.966)); }
+  87%  { transform: translate(calc(150px * 0.454), calc(24px * -0.891)); }
+  100% { transform: translate(calc(150px * 1.000), calc(24px *  0.000)); }
+}
+
+@keyframes gpulse {
+  0%,100% { opacity:0.5; transform:scale(1);    }
+  50%     { opacity:1;   transform:scale(1.06); }
+}
+</style>
