@@ -1,12 +1,10 @@
 <div class="card bg-base-200 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.01] flex flex-col h-full">
   <figure class="px-4 pt-4">
-    <img src="assets/Stoms.png"
-         alt="STOMS"
-         class="rounded-xl w-full h-48 object-contain bg-base-300" />
+    <img src="assets/Stoms.png" alt="STOMS" class="rounded-xl w-full h-48 object-contain bg-base-300" />
   </figure>
   <div class="card-body flex flex-col flex-1">
     <h2 class="text-xl font-bold text-base-content">STOMS</h2>
-    <div class="badge badge-primary">Web App</div>
+    <div class="badge badge-primary mb-2">Web App</div>
     <p class="text-base text-base-content">
       Centralized operations management system for student organizations — attendance, events, finance, and equipment in one platform.
     </p>
@@ -18,63 +16,9 @@
       <span class="badge badge-primary">AWS Rekognition</span>
       <span class="badge badge-secondary">Flutter</span>
     </div>
-    <div class="card-actions justify-end mt-auto pt-2">
-      <a href="https://github.com/STOMS-SEP490/STOMS-BE" target="_blank" class="btn btn-neutral btn-sm">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-        </svg>
-        GitHub
-      </a>
-      <button onclick="document.getElementById('stoms-modal').showModal()" class="btn btn-secondary btn-sm">Read more</button>
+    <div class="flex flex-wrap gap-2 pt-2 justify-end mt-auto">
+      <a href="https://github.com/STOMS-SEP490/STOMS-BE" target="_blank" rel="noopener noreferrer" class="btn btn-neutral btn-sm">GitHub</a>
+      <button onclick="document.getElementById('modal-stoms').showModal()" class="btn btn-secondary btn-sm">Read more</button>
     </div>
   </div>
 </div>
-
-<dialog id="stoms-modal" class="modal">
-  <form method="dialog" class="modal-box max-w-2xl">
-    <h3 class="font-bold text-2xl mb-1">STOMS</h3>
-    <p class="text-sm text-base-content/60 mb-4">Centralized Operations Management System · Capstone Project SEP490 · FPT University</p>
-    <div class="space-y-4 text-base">
-      <p>
-        STOMS is a full-scale platform for managing student organization operations, built by a team of 5 as a capstone project.
-        The system covers member management, training sessions, events, equipment, finance, and real-time notifications in a single integrated platform.
-      </p>
-      <div>
-        <p class="font-bold mb-1">My role: Back-End Developer & Team Leader</p>
-        <p>Led a team of 5 developers. Personally responsible for the following modules:</p>
-        <ul class="list-disc pl-5 mt-2 space-y-1">
-          <li><strong>Face Recognition Attendance</strong> — integrated AWS Rekognition to identify members from group photos using a greedy face-matching algorithm; supports bulk check-in/check-out</li>
-          <li><strong>Attendance Management</strong> — full CRUD for attendance records, session-based tracking, check-in/out timestamps with image evidence</li>
-          <li><strong>Member Assignment</strong> — task assignment system with approval workflows, status tracking, and task reports</li>
-          <li><strong>Finance / Fund Management</strong> — member wallets, contributions, expenses, borrowings, and full transaction history with audit logging</li>
-        </ul>
-      </div>
-      <div>
-        <p class="font-bold mb-1">Key technical achievements:</p>
-        <ul class="list-disc pl-5 space-y-1">
-          <li>Designed and implemented RESTful APIs with ASP.NET Core following clean architecture (API → Service → Repository)</li>
-          <li>Integrated AWS Rekognition for real-time face detection and comparison across group photos</li>
-          <li>Built real-time notification system using SignalR WebSocket hub</li>
-          <li>Implemented automated background jobs with Hangfire (session status updates, daily reminders)</li>
-          <li>Containerized the application with Docker and deployed to Render</li>
-          <li>Designed PostgreSQL schema for 40+ entities with Entity Framework Core</li>
-        </ul>
-      </div>
-      <div class="flex flex-wrap gap-2 mt-2">
-        <span class="badge badge-primary">ASP.NET Core</span>
-        <span class="badge badge-secondary">PostgreSQL</span>
-        <span class="badge badge-accent">Entity Framework</span>
-        <span class="badge badge-neutral">SignalR</span>
-        <span class="badge badge-primary">Hangfire</span>
-        <span class="badge badge-secondary">AWS Rekognition</span>
-        <span class="badge badge-accent">Docker</span>
-        <span class="badge badge-neutral">Flutter</span>
-        <span class="badge badge-primary">JWT Auth</span>
-        <span class="badge badge-secondary">Cloudinary</span>
-      </div>
-    </div>
-    <div class="modal-action">
-      <button class="btn">Close</button>
-    </div>
-  </form>
-</dialog>

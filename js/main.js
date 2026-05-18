@@ -3,15 +3,26 @@ async function loadPartial(url, containerId, callback) {
   const container = document.getElementById(containerId);
   if (!container) return;
 
-  const response = await fetch(url);
+  const response = await fetch(url + '?v=' + Date.now());
   if (!response.ok) {
     container.innerHTML = `<p>Could not load ${url}</p>`;
     return;
   }
 
   const html = await response.text();
-  container.innerHTML = html;
 
+  // Use <template> for safe fragment parsing — handles SVG, dialogs, etc.
+  const tpl = document.createElement('template');
+  tpl.innerHTML = html;
+  container.innerHTML = '';
+  container.appendChild(tpl.content.cloneNode(true));
+  // Move any dialogs to body so they aren't clipped by grid/overflow containers
+  container.querySelectorAll('dialog').forEach(dialog => {
+    document.body.appendChild(dialog);
+    dialog.addEventListener('click', (e) => {
+      if (e.target === dialog) dialog.close();
+    });
+  });
   if (containerId === 'footer-container') {
     const yearSpan = document.getElementById('year');
     if (yearSpan) yearSpan.textContent = new Date().getFullYear();
@@ -24,12 +35,17 @@ async function loadPartial(url, containerId, callback) {
 loadPartial('partials/presentation.html', 'presentation-container');
 loadPartial('partials/experience.html', 'experience-container');
 loadPartial('partials/footer.html', 'footer-container');
+loadPartial('partials/projects/modals.html', 'modals-container');
 
 // -------------------- Projects Pagination --------------------
 const projects = [
-  { url: 'partials/projects/stoms.html',      containerId: 'stoms-container' },
-  { url: 'partials/projects/koi.html',        containerId: 'koi-container' },
-  { url: 'partials/projects/watchstore.html', containerId: 'watch-container' },
+  { url: 'partials/projects/stoms.html',       containerId: 'stoms-container' },
+  { url: 'partials/projects/koi.html',         containerId: 'koi-container' },
+  { url: 'partials/projects/watchstore.html',  containerId: 'watch-container' },
+  { url: 'partials/projects/1946studio.html',  containerId: 'studio1946-container' },
+  { url: 'partials/projects/firewarrior.html', containerId: 'firewarrior-container' },
+  { url: 'partials/projects/icequest.html',    containerId: 'icequest-container' },
+  { url: 'partials/projects/spaceexplorer.html', containerId: 'spaceexplorer-container' },
 ];
 
 const projectsPerPage = 6;
