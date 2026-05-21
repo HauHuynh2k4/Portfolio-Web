@@ -40,6 +40,7 @@ loadPartial('partials/projects/modals.html', 'modals-container');
 // -------------------- Projects Pagination --------------------
 const projects = [
   { url: 'partials/projects/stoms.html',       containerId: 'stoms-container' },
+  { url: 'partials/projects/asa.html',         containerId: 'asa-container' },
   { url: 'partials/projects/koi.html',         containerId: 'koi-container' },
   { url: 'partials/projects/watchstore.html',  containerId: 'watch-container' },
   { url: 'partials/projects/1946studio.html',  containerId: 'studio1946-container' },

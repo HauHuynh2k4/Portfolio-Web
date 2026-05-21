@@ -1,34 +1,105 @@
+<!-- ===== ASA Platform Modal ===== -->
+<dialog id="modal-asa" class="modal">
+  <div class="modal-box w-11/12 max-w-2xl max-h-[90vh] overflow-y-auto">
+    <h3 class="font-bold text-2xl mb-1">ASA Platform</h3>
+    <p class="text-sm text-base-content/60 mb-4">SaaS Platform · Startup Project EXE201 · FPT University</p>
+    <div class="space-y-4 text-base">
+
+      <p>
+        ASA is a SaaS platform built for the EXE201 entrepreneurship course, developed by a team of 4 over 3 months and deployed to production.
+        The system consists of two independent back-ends: the <strong>Tenant BE</strong> powers each shop with a full suite of business tools,
+        while the <strong>Platform BE</strong> gives the company control over tenant subscriptions and revenue.
+        Payment is handled via SePay with VietQR code generation and webhook-based order finalization.
+      </p>
+
+      <div>
+        <p class="font-bold mb-1">My role: Back-End Developer</p>
+        <p class="text-base-content/80 mb-2">Worked across both services. Responsible for the following modules:</p>
+        <ul class="list-disc pl-5 space-y-1">
+          <li><strong>AI Chatbot (Tenant)</strong> — built a shop-scoped AI advisor that answers sales questions and surfaces analytics (revenue, inventory, customers, product performance) via dedicated endpoints</li>
+          <li><strong>Product Management (Tenant)</strong> — full CRUD with image upload, unit management, category, and status toggling; feature-gated via custom <code>[RequireFeature]</code> attribute</li>
+          <li><strong>Vouchers &amp; Promotions (Tenant)</strong> — voucher creation and validation, promotion programs with product-level discount rules</li>
+          <li><strong>Order Pricing Flow (Tenant)</strong> — pricing calculation logic that applies promotions, vouchers, and rank-based discounts before finalizing an order</li>
+          <li><strong>SePay Webhook (Tenant)</strong> — webhook handler that confirms payment, deducts inventory, calculates profit, and triggers real-time notifications via SignalR and FCM</li>
+          <li><strong>Revenue Reports (Tenant)</strong> — statistics overview, shift-close report, and professional Excel export</li>
+          <li><strong>Tenant Onboarding (Platform)</strong> — shop creation and subscription provisioning flow</li>
+          <li><strong>Promotions &amp; Revenue Reports (Platform)</strong> — platform-level promotion management and revenue analytics (monthly revenue, shop-by-package, new vs renewal stats)</li>
+          <li><strong>AI Chatbot (Platform)</strong> — company-side chatbot for internal shop data queries</li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="font-bold mb-1">Key achievements and learnings:</p>
+        <ul class="list-disc pl-5 space-y-1">
+          <li>Shipped a production-ready SaaS product with two independent back-ends within 3 months as part of a startup course</li>
+          <li>Learned and integrated SePay payment gateway — handling VietQR generation, webhook verification, and idempotent transaction processing</li>
+          <li>Built a feature-based authorization system using a custom <code>[RequireFeature]</code> attribute to gate endpoints by subscription plan</li>
+          <li>Integrated an AI chatbot backed by real shop data, providing actionable sales and inventory insights</li>
+          <li>Gained experience designing a dual-service architecture where Platform and Tenant operate independently with separate databases</li>
+          <li>Learned how to scope and prioritize features under startup constraints — balancing speed of delivery with code quality</li>
+        </ul>
+      </div>
+
+      <div class="flex flex-wrap gap-2">
+        <span class="badge badge-primary">ASP.NET Core</span>
+        <span class="badge badge-secondary">SQL Server</span>
+        <span class="badge badge-accent">Entity Framework</span>
+        <span class="badge badge-neutral">SePay</span>
+        <span class="badge badge-primary">SignalR</span>
+        <span class="badge badge-secondary">FCM</span>
+        <span class="badge badge-accent">AI Chatbot</span>
+        <span class="badge badge-neutral">JWT Auth</span>
+        <span class="badge badge-primary">Cloudinary</span>
+        <span class="badge badge-secondary">Excel Export</span>
+      </div>
+    </div>
+    <div class="modal-action">
+      <button class="btn" onclick="document.getElementById('modal-asa').close()">Close</button>
+    </div>
+  </div>
+  <form method="dialog" class="modal-backdrop"><button>close</button></form>
+</dialog>
+
 <!-- ===== STOMS Modal ===== -->
 <dialog id="modal-stoms" class="modal">
   <div class="modal-box w-11/12 max-w-2xl max-h-[90vh] overflow-y-auto">
     <h3 class="font-bold text-2xl mb-1">STOMS</h3>
     <p class="text-sm text-base-content/60 mb-4">Centralized Operations Management System · Capstone Project SEP490 · FPT University</p>
     <div class="space-y-4 text-base">
+
       <p>
-        STOMS is a full-scale platform for managing student organization operations, built by a team of 5 as a capstone project.
-        The system covers member management, training sessions, events, equipment, finance, and real-time notifications in a single integrated platform.
+        STOMS is a centralized operations management platform developed as a capstone project (SEP490)
+        for FSTEM — a real STEM-AI teaching organization at FPT University. Built by a team of 5 over
+        3 months, the system covers the full operational workflow of the organization: personnel
+        assignment, attendance tracking, event and course management, equipment borrowing, and fund
+        management — all in a single integrated platform.
       </p>
+
       <div>
         <p class="font-bold mb-1">My role: Back-End Developer &amp; Team Leader</p>
-        <p>Led a team of 5 developers. Personally responsible for the following modules:</p>
-        <ul class="list-disc pl-5 mt-2 space-y-1">
-          <li><strong>Face Recognition Attendance</strong> — integrated AWS Rekognition to identify members from group photos using a greedy face-matching algorithm; supports bulk check-in/check-out</li>
-          <li><strong>Attendance Management</strong> — full CRUD for attendance records, session-based tracking, check-in/out timestamps with image evidence</li>
-          <li><strong>Member Assignment</strong> — task assignment system with approval workflows, status tracking, and task reports</li>
-          <li><strong>Finance / Fund Management</strong> — member wallets, contributions, expenses, borrowings, and full transaction history with audit logging</li>
-        </ul>
-      </div>
-      <div>
-        <p class="font-bold mb-1">Key technical achievements:</p>
+        <p class="text-base-content/80 mb-2">Led a team of 5. Personally responsible for the following modules:</p>
         <ul class="list-disc pl-5 space-y-1">
-          <li>Designed RESTful APIs with ASP.NET Core following clean architecture (API → Service → Repository)</li>
-          <li>Integrated AWS Rekognition for real-time face detection and comparison across group photos</li>
-          <li>Built real-time notification system using SignalR WebSocket hub</li>
-          <li>Implemented automated background jobs with Hangfire (session status updates, daily reminders)</li>
-          <li>Containerized the application with Docker and deployed to Render</li>
-          <li>Designed PostgreSQL schema for 40+ entities with Entity Framework Core</li>
+          <li><strong>Attendance with Face Recognition</strong> — integrated AWS Rekognition to identify members from group photos; supports bulk check-in/check-out with image evidence</li>
+          <li><strong>Personnel Suggestion &amp; Assignment</strong> — built a suggestion engine that recommends suitable members for tasks based on skills, workload and role; includes approval workflow and assignment tracking</li>
+          <li><strong>Fund &amp; Transaction Management</strong> — contribution and expense transactions, approve expense and full transaction history with audit logging</li>
+          <li><strong>Hangfire Background Jobs</strong> — automated reminders and scheduled status transitions (e.g. auto-close sessions, overdue alerts)</li>
+          <li><strong>Flutter UI</strong> — led the implementation of mobile interfaces and API integration for the mobile app</li>
         </ul>
       </div>
+
+      <div>
+        <p class="font-bold mb-1">Key achievements and learnings:</p>
+        <ul class="list-disc pl-5 space-y-1">
+          <li>Gained experience gathering requirements directly from a real client, then translating them into Business Requirements and User Stories for the development team</li>
+          <li>Delivered a production-ready system for a real client organization within 3 months</li>
+          <li>Learned and applied AWS Rekognition for real-time face detection in a group photo context</li>
+          <li>Built real-time notifications using SignalR WebSocket hub</li>
+          <li>Gained hands-on experience with Docker containerization and deployment to Render</li>
+          <li>Designed a PostgreSQL schema for 40+ entities using Entity Framework Core</li>
+          <li>Grew as a team leader — task breakdown, sprint planning, code review, and keeping 5 people aligned over 3 months</li>
+        </ul>
+      </div>
+
       <div class="flex flex-wrap gap-2">
         <span class="badge badge-primary">ASP.NET Core</span>
         <span class="badge badge-secondary">PostgreSQL</span>
@@ -53,31 +124,54 @@
 <dialog id="modal-koi" class="modal">
   <div class="modal-box w-11/12 max-w-2xl max-h-[90vh] overflow-y-auto">
     <h3 class="font-bold text-2xl mb-1">Koi Feng Shui Consulting System</h3>
-    <p class="text-sm text-base-content/60 mb-4">Web Application · Team Project</p>
+    <p class="text-sm text-base-content/60 mb-4">Full-Stack Web Application · SWP391 · FPT University</p>
     <div class="space-y-4 text-base">
+
       <p>
-        A web application for Koi fish Feng Shui consulting. Users can get personalized Feng Shui recommendations
-        based on their birth year and Koi fish characteristics. The system includes a full admin dashboard for
-        content and user management.
+        A web application that provides personalized Feng Shui consulting for Koi fish ponds, built by a team of 5
+        over 3 months for the SWP391 course at FPT University. Users enter their date of birth and receive
+        recommendations on Koi fish types, colors, quantities, pond shapes, and auspicious directions based on
+        their personal element. The platform also includes an advertisement marketplace where Koi-related
+        businesses can post ads and purchase visibility packages.
       </p>
+
       <div>
-        <p class="font-bold mb-1">My role: Back-End Developer</p>
-        <ul class="list-disc pl-5 mt-2 space-y-1">
-          <li>Designed and implemented RESTful APIs using ASP.NET Core and C#</li>
-          <li>Built the database schema and data access layer with SQL Server and Entity Framework</li>
-          <li>Implemented JWT-based authentication and role-based authorization</li>
-          <li>Developed the core consultation logic for Feng Shui recommendations</li>
-          <li>Collaborated with front-end developers to integrate React UI with the back-end APIs</li>
+        <p class="font-bold mb-1">My role: Back-End Developer &amp; Team Leader</p>
+        <p class="text-base-content/80 mb-2">Led a team of 5. Responsible for the following modules:</p>
+        <ul class="list-disc pl-5 space-y-1">
+          <li><strong>Authentication</strong> — login, logout, JWT token issuance and validation, role-based access control (Admin / Member)</li>
+          <li><strong>Lunar Calendar &amp; Element Calculation</strong> — implemented solar-to-lunar date conversion and personal element (Ngu Hanh) derivation from birth date</li>
+          <li><strong>Feng Shui Consulting Logic</strong> — built the core algorithms for life palace determination, element compatibility scoring, and Koi type/color/quantity recommendations</li>
+          <li><strong>Compatibility Scoring</strong> — developed the point-based compatibility calculation between Koi varieties and personal elements</li>
+          <li><strong>Advertisement Management</strong> — ad creation, status management, and element-based ad targeting</li>
+          <li><strong>Ads Package Management</strong> — tiered visibility packages with rank, quantity, and expiration tracking; automated expiration via Hangfire background job</li>
+          <li><strong>Feedback</strong> — feedback submission, retrieval by ad and by user, and deletion</li>
         </ul>
       </div>
-      <div class="flex flex-wrap gap-2">
-        <span class="badge badge-primary">C#</span>
-        <span class="badge badge-secondary">ASP.NET Core</span>
-        <span class="badge badge-accent">React</span>
-        <span class="badge badge-neutral">SQL Server</span>
-        <span class="badge badge-primary">Entity Framework</span>
-        <span class="badge badge-secondary">JWT Auth</span>
+
+      <div>
+        <p class="font-bold mb-1">Key achievements and learnings:</p>
+        <ul class="list-disc pl-5 space-y-1">
+          <li>Delivered a working consulting system with non-trivial domain logic (lunar calendar, Ngu Hanh, life palace) within 3 months</li>
+          <li>Learned how to translate traditional Feng Shui rules into structured algorithms and database schemas</li>
+          <li>Integrated VNPay payment gateway for package purchases</li>
+          <li>Used Hangfire to automate advertisement expiration without manual intervention</li>
+          <li>Collaborated closely with front-end teammates to align API contracts and integrate the React UI</li>
+          <li>Gained experience leading a 5-person team — task breakdown, code review, and keeping the project on schedule</li>
+        </ul>
       </div>
+
+      <div class="flex flex-wrap gap-2">
+        <span class="badge badge-primary">ASP.NET Core</span>
+        <span class="badge badge-secondary">SQL Server</span>
+        <span class="badge badge-accent">Entity Framework</span>
+        <span class="badge badge-neutral">Hangfire</span>
+        <span class="badge badge-primary">JWT Auth</span>
+        <span class="badge badge-secondary">VNPay</span>
+        <span class="badge badge-accent">React</span>
+        <span class="badge badge-neutral">Vite</span>
+      </div>
+
     </div>
     <div class="modal-action">
       <button class="btn" onclick="document.getElementById('modal-koi').close()">Close</button>
@@ -90,30 +184,51 @@
 <dialog id="modal-watch" class="modal">
   <div class="modal-box w-11/12 max-w-2xl max-h-[90vh] overflow-y-auto">
     <h3 class="font-bold text-2xl mb-1">Watch Store Website</h3>
-    <p class="text-sm text-base-content/60 mb-4">Web Application · Solo Project</p>
+    <p class="text-sm text-base-content/60 mb-4">Full-Stack Web Application · Solo Project · PRJ301 · FPT University</p>
     <div class="space-y-4 text-base">
+
       <p>
-        A full-featured e-commerce website for a watch store, built from scratch as a solo project.
-        The system supports product browsing, cart management, order processing, and a complete admin panel for managing inventory and users.
+        A full-featured e-commerce web application for a luxury watch store, built solo for the PRJ301 course
+        at FPT University. The system covers the complete customer shopping flow and a full admin panel,
+        built from scratch using Java EE with JSP/Servlet and SQL Server — no frameworks, no ORM.
+        Featured brands include Rolex, Cartier, Patek Philippe, Hublot, Richard Mille, and Casio.
       </p>
+
       <div>
         <p class="font-bold mb-1">My role: Full-Stack Developer (Solo)</p>
-        <ul class="list-disc pl-5 mt-2 space-y-1">
-          <li>Designed and implemented the full application using Java with JSP/Servlet and JDBC</li>
-          <li>Built product catalog, shopping cart, and order management features</li>
-          <li>Implemented user authentication and session management</li>
-          <li>Designed the SQL Server database schema for products, orders, and users</li>
-          <li>Developed the admin dashboard for inventory and order management</li>
+        <p class="text-base-content/80 mb-2">Designed and built the entire system end-to-end. Responsible for:</p>
+        <ul class="list-disc pl-5 space-y-1">
+          <li><strong>Authentication</strong> — user registration, login, logout with session management</li>
+          <li><strong>Product Catalog</strong> — browse all watches, view detail page, search by name/ID, filter by brand, type, and price range</li>
+          <li><strong>Shopping Cart</strong> — add to cart, update quantities, remove items, session-based cart persistence</li>
+          <li><strong>Wishlist</strong> — add, view, and remove watches from a personal wishlist</li>
+          <li><strong>Checkout &amp; Orders</strong> — order placement, invoice creation, order confirmation page, personal invoice history</li>
+          <li><strong>Admin Panel</strong> — product CRUD (add, update, delete watches with images), user management, full invoice listing and search by user</li>
+          <li><strong>Database Layer</strong> — designed the SQL Server schema and implemented all data access using JDBC with the DAO pattern (WatchDAO, UserDAO, InvoiceDAO)</li>
         </ul>
       </div>
+
+      <div>
+        <p class="font-bold mb-1">Key achievements and learnings:</p>
+        <ul class="list-disc pl-5 space-y-1">
+          <li>Delivered a complete e-commerce system solo — from database design to UI — within the course timeline</li>
+          <li>Learned the full Java EE web stack hands-on: Servlet lifecycle, JSP, session management, and JDBC</li>
+          <li>Applied MVC architecture manually without a framework, which gave a solid understanding of how web frameworks work under the hood</li>
+          <li>Implemented 30 Servlet controllers covering all user and admin flows</li>
+          <li>Gained experience designing relational database schemas and writing raw SQL queries with JDBC</li>
+        </ul>
+      </div>
+
       <div class="flex flex-wrap gap-2">
         <span class="badge badge-primary">Java</span>
         <span class="badge badge-secondary">JSP / Servlet</span>
         <span class="badge badge-accent">JDBC</span>
         <span class="badge badge-neutral">SQL Server</span>
-        <span class="badge badge-primary">HTML / CSS</span>
-        <span class="badge badge-secondary">JavaScript</span>
+        <span class="badge badge-primary">MVC</span>
+        <span class="badge badge-secondary">Bootstrap</span>
+        <span class="badge badge-accent">Apache Tomcat</span>
       </div>
+
     </div>
     <div class="modal-action">
       <button class="btn" onclick="document.getElementById('modal-watch').close()">Close</button>
@@ -126,46 +241,48 @@
 <dialog id="modal-icequest" class="modal">
   <div class="modal-box w-11/12 max-w-2xl max-h-[90vh] overflow-y-auto">
     <h3 class="font-bold text-2xl mb-1">Ice Quest</h3>
-    <p class="text-sm text-base-content/60 mb-4">2D Snowboarding Game · Unity / C# · PRU212 · FPT University</p>
+    <p class="text-sm text-base-content/60 mb-4">2D Snowboarding Game · PRU212 · FPT University</p>
     <div class="space-y-4 text-base">
+
       <p>
-        A 2D snowboarding game built with Unity and C# as a lab assignment for PRU212.
-        Players control a snowboarder racing down icy slopes across 3 progressively harder levels,
-        collecting coins, picking up power-ups, and avoiding obstacles to reach the finish line.
+        A 2D physics-based snowboarding game built with Unity and C# as a lab assignment for PRU212 at FPT University,
+        developed by a team of 5. Players race down icy slopes across 3 progressively harder levels, collecting coins,
+        picking up power-ups, performing aerial spins for bonus score, and avoiding obstacles to reach the finish line.
+        The game features a star rating system, per-level high score persistence, and level unlock progression.
       </p>
+
       <div>
-        <p class="font-bold mb-1">Key Features:</p>
-        <ul class="list-disc pl-5 mt-2 space-y-1">
-          <li><strong>3 Levels</strong> — each with unique terrain layout and increasing difficulty</li>
-          <li><strong>Item System</strong> — coins, speed boost, shield (blocks one obstacle hit), and helmet power-ups</li>
-          <li><strong>Score System</strong> — real-time score tracking with high score persistence via PlayerPrefs</li>
-          <li><strong>Star Rating</strong> — 0 to 3 stars awarded per level based on performance</li>
-          <li><strong>Parallax Background</strong> — multi-layer scrolling background for depth effect</li>
-          <li><strong>Crash Detection</strong> — head collision triggers game over; shield absorbs one hit</li>
-          <li><strong>Audio System</strong> — background music and sound effects with AudioMixer</li>
-          <li><strong>Settings</strong> — volume control and game settings persistence</li>
-        </ul>
-      </div>
-      <div>
-        <p class="font-bold mb-1">Technical highlights:</p>
+        <p class="font-bold mb-1">My role: Game Developer</p>
+        <p class="text-base-content/80 mb-2">Responsible for the following systems:</p>
         <ul class="list-disc pl-5 space-y-1">
-          <li>Physics-based player movement using Unity 2D Rigidbody and custom PhysicsMaterial2D</li>
-          <li>Camera follow and background follow scripts for smooth scrolling</li>
-          <li>Item trigger system with individual item behaviors (CoinItem, SpeedItem, HelmetItem, PlayerShield)</li>
-          <li>Global score manager using singleton pattern across scenes</li>
-          <li>Universal Render Pipeline (URP) for 2D lighting and visual effects</li>
-          <li>DOTween integration for UI animations</li>
+          <li><strong>Player Controller</strong> — physics-based slope movement using Rigidbody2D with speed and torque scaling by terrain angle; balance and stability systems; jump with aerial rotation via A/D keys</li>
+          <li><strong>Scoring System</strong> — distance-based score (+1 per unit traveled) and spin bonus tracking (full 360 rotations while airborne; +100 for first spin, +150 per additional spin)</li>
+          <li><strong>Spin Detection</strong> — detects full rotations while airborne (minimum 0.5s in air) and awards bonus score on landing with a popup display</li>
+          <li><strong>UI System</strong> — built all UI panels and interactive elements: Main Menu, Level Select, Pause Panel, Game Over Panel, Win Panel, Settings Panel, HUD bars (health, score, speed display), and all buttons</li>
+          <li><strong>Score Persistence</strong> — per-level high score saved to JSON (desktop) or PlayerPrefs (WebGL); level completion status persisted for unlock checks and star display</li>
+          <li><strong>Map Design</strong> — contributed to designing and laying out the level terrain</li>
         </ul>
       </div>
+
+      <div>
+        <p class="font-bold mb-1">Key achievements and learnings:</p>
+        <ul class="list-disc pl-5 space-y-1">
+          <li>Delivered a complete 3-level game with physics, power-ups, scoring, and persistence as a solo project</li>
+          <li>Learned Unity 2D physics in depth — Rigidbody2D, PhysicsMaterial2D, slope-based force application</li>
+          <li>Implemented cross-platform score persistence: JSON file on desktop, PlayerPrefs fallback for WebGL</li>
+          <li>Built a reusable settings panel system that works across multiple calling panels without code duplication</li>
+          <li>Deployed to itch.io and made the game publicly playable online</li>
+        </ul>
+      </div>
+
       <div class="flex flex-wrap gap-2">
         <span class="badge badge-primary">Unity</span>
         <span class="badge badge-secondary">C#</span>
         <span class="badge badge-accent">2D Physics</span>
-        <span class="badge badge-neutral">URP</span>
-        <span class="badge badge-primary">DOTween</span>
-        <span class="badge badge-secondary">TextMeshPro</span>
-        <span class="badge badge-accent">AudioMixer</span>
+        <span class="badge badge-neutral">TextMeshPro</span>
+        <span class="badge badge-primary">JSON Persistence</span>
       </div>
+
     </div>
     <div class="modal-action">
       <button class="btn" onclick="document.getElementById('modal-icequest').close()">Close</button>
@@ -178,30 +295,49 @@
 <dialog id="modal-firewarrior" class="modal">
   <div class="modal-box w-11/12 max-w-2xl max-h-[90vh] overflow-y-auto">
     <h3 class="font-bold text-2xl mb-1">Fire Warrior in the Demon World</h3>
-    <p class="text-sm text-base-content/60 mb-4">2D Action Platformer · Unity / C# · Team Project</p>
+    <p class="text-sm text-base-content/60 mb-4">2D Action Platformer · Unity / C# · PRU212 · FPT University</p>
     <div class="space-y-4 text-base">
+
       <p>
-        A 2D action platformer game built with Unity and C# as a team project of 5 members.
-        Players fight through multiple demon-infested maps, each designed by a different team member,
-        with increasing difficulty and unique mechanics per stage.
+        A 2D action platformer built with Unity and C# as a final project for PRU212 at FPT University,
+        developed by a team of 5. Each member designed and implemented their own map with unique enemies,
+        traps, and a boss encounter. The game features a full RPG progression system: a 3-hit melee combo,
+        3 magic spells, dash, defend, a coin economy, an equipment shop, and a gift code mechanic.
       </p>
+
       <div>
-        <p class="font-bold mb-1">My role: Game Developer (Final Map + Systems)</p>
-        <ul class="list-disc pl-5 mt-2 space-y-1">
-          <li><strong>Final Map</strong> — designed and implemented the last stage with custom enemy patterns and boss mechanics</li>
-          <li><strong>AI Advisor System</strong> — built an in-game advisor that provides hints and guidance to the player</li>
-          <li><strong>Shop System</strong> — implemented a fully functional in-game shop for purchasing upgrades and items</li>
-          <li><strong>Code System</strong> — developed a secret code input mechanic that unlocks special abilities or content</li>
+        <p class="font-bold mb-1">My role: Game Developer</p>
+        <p class="text-base-content/80 mb-2">Responsible for the following systems and content:</p>
+        <ul class="list-disc pl-5 space-y-1">
+          <li><strong>Map 5 — Demon Fortress (Final Map)</strong> — designed and implemented the last stage with multiple mini-boss types (DemonBat, DemonHornRed, EvilWizard), a final boss encounter, saw traps, toxic zones, moving platforms, waterfall platforms, ladder climbing, and auto-closing gates</li>
+          <li><strong>AI Advisor System</strong> — built an in-game NPC advisor that provides hints and guidance to the player during gameplay</li>
+          <li><strong>Shop System</strong> — implemented the full in-game equipment shop in the Home Village hub: item browsing, stat detail panel, coin-based purchase logic, and owned-item state management</li>
+          <li><strong>Gift Code System</strong> — developed a secret code input mechanic with an NPC interaction panel; codes trigger stat changes, gold rewards, or penalties (4 codes implemented)</li>
         </ul>
       </div>
+
+      <div>
+        <p class="font-bold mb-1">Key achievements and learnings:</p>
+        <ul class="list-disc pl-5 space-y-1">
+          <li>Delivered a complete 5-map game with a full RPG system as a team of 5 within the course timeline</li>
+          <li>Learned Unity 2D physics, Animator state machines, and the New Input System hands-on</li>
+          <li>Implemented cross-scene data persistence using PlayerPrefs for inventory, coins, and player stats</li>
+          <li>Gained experience designing enemy AI with patrol, chase, and multi-phase boss behavior patterns</li>
+          <li>Collaborated across 5 independently developed maps while maintaining a shared player and inventory system</li>
+        </ul>
+      </div>
+
       <div class="flex flex-wrap gap-2">
         <span class="badge badge-primary">Unity</span>
         <span class="badge badge-secondary">C#</span>
         <span class="badge badge-accent">2D Platformer</span>
-        <span class="badge badge-neutral">Game AI</span>
-        <span class="badge badge-primary">Physics</span>
-        <span class="badge badge-secondary">UI Systems</span>
+        <span class="badge badge-neutral">URP</span>
+        <span class="badge badge-primary">New Input System</span>
+        <span class="badge badge-secondary">TextMeshPro</span>
+        <span class="badge badge-accent">PlayerPrefs</span>
+        <span class="badge badge-neutral">Spriter2UnityDX</span>
       </div>
+
     </div>
     <div class="modal-action">
       <button class="btn" onclick="document.getElementById('modal-firewarrior').close()">Close</button>
@@ -214,53 +350,50 @@
 <dialog id="modal-spaceexplorer" class="modal">
   <div class="modal-box w-11/12 max-w-2xl max-h-[90vh] overflow-y-auto">
     <h3 class="font-bold text-2xl mb-1">Space Explorer</h3>
-    <p class="text-sm text-base-content/60 mb-4">2D Endless Space Shooter · Unity / C# · PRU212 · FPT University</p>
+    <p class="text-sm text-base-content/60 mb-4">2D Endless Space Shooter · PRU212 · FPT University</p>
     <div class="space-y-4 text-base">
+
       <p>
-        An endless 2D space shooter built with Unity and C# as a lab assignment for PRU212.
-        Players pilot a spaceship through an infinite wave of asteroids, collecting power-ups and chasing the highest score.
-        Difficulty scales dynamically as the score increases, with faster asteroids, curved movement patterns, and small asteroid swarms unlocking over time.
+        An endless 2D space shooter built with Unity and C# as a lab assignment for PRU212 at FPT University,
+        developed by a team of 5. Players pilot a spaceship through infinite waves of asteroids, collecting
+        power-ups and chasing the highest score. Difficulty scales dynamically as the score increases, with
+        faster asteroids and new spawn patterns unlocking over time. Supports two control modes: mouse cursor
+        and keyboard (WASD), switchable from the settings panel.
       </p>
+
       <div>
-        <p class="font-bold mb-1">Key Features:</p>
-        <ul class="list-disc pl-5 mt-2 space-y-1">
-          <li><strong>Dual Control Modes</strong> — play with mouse cursor or keyboard (WASD), switchable from the main menu with preference saved via PlayerPrefs</li>
-          <li><strong>Mana-Based Rapid Fire</strong> — hold fire to drain mana for rapid shooting; mana regenerates when released, with a cooldown when fully depleted</li>
-          <li><strong>Progressive Difficulty</strong> — asteroid speed, curve intensity, and spawn rate all increase every 10 seconds; hard mode activates at 5000 points</li>
-          <li><strong>Small Asteroid Swarms</strong> — a second wave of smaller, faster asteroids unlocks at 500 points</li>
-          <li><strong>Bullet Upgrade System</strong> — stacking power-ups evolve the attack: single shot to enhanced shot, then dual shot, then 3-way spread</li>
-          <li><strong>Shield Item</strong> — absorbs one hit; flashes as a warning before expiring; stackable to reset duration</li>
-          <li><strong>Fire Rate Boost</strong> — speed power-up doubles fire rate for a limited duration</li>
-          <li><strong>Heal Item</strong> — restores a portion of the player health bar</li>
-          <li><strong>Top 5 High Score Board</strong> — scores saved to JSON; prompts name entry when a new top-5 score is achieved</li>
-          <li><strong>Pause System</strong> — press P to pause; includes settings panel with mouse sensitivity control</li>
-          <li><strong>Custom Cursor</strong> — custom crosshair cursor in cursor mode</li>
-          <li><strong>Parallax Background</strong> — multi-layer scrolling starfield for depth effect</li>
-          <li><strong>Audio System</strong> — background music, fire SFX, explosion, heal, shield, and damage sounds via AudioManager singleton</li>
-        </ul>
-      </div>
-      <div>
-        <p class="font-bold mb-1">Technical highlights:</p>
+        <p class="font-bold mb-1">My role: Game Developer</p>
+        <p class="text-base-content/80 mb-2">Responsible for the following systems:</p>
         <ul class="list-disc pl-5 space-y-1">
-          <li>Singleton pattern used for GameManager, ScoreManager, AudioManager, AsteroidSpawner, and HighScoreManager</li>
-          <li>New Unity Input System for keyboard movement and mouse position reading</li>
-          <li>Coroutine-based timed effects: shield timer with flashing warning, bullet upgrade reset, fire rate reset</li>
-          <li>Score-driven spawn logic: spawn interval decays over time, hard mode flag accelerates decay rate</li>
-          <li>High score persistence using JSON serialization to Application.persistentDataPath</li>
-          <li>Universal Render Pipeline (URP) for 2D lighting and visual polish</li>
-          <li>TextMeshPro for all in-game UI text</li>
+          <li><strong>Game Manager</strong> — singleton managing game state (running, paused, game over), asteroid spawning loop, pause/resume with P key, panel visibility coordination (Game Over, Pause, Settings, Save Score), restart and return-to-menu flow</li>
+          <li><strong>High Score System</strong> — top-5 leaderboard persisted to JSON file; checks if current score qualifies before showing name input; name entry with 10-character limit; dynamic leaderboard UI built at runtime from prefabs</li>
+          <li><strong>Settings Manager</strong> — SFX and music volume sliders with live percentage display; mouse sensitivity slider saved to PlayerPrefs; play mode toggle (Keyboard / Cursor) synced with PlayModeSelector via static event</li>
+          <li><strong>Play Mode Selector</strong> — Keyboard vs Cursor mode selection with toggle UI; mode persisted to PlayerPrefs; static event <code>OnPlayModeChanged</code> notifies other systems on change; save and cancel flow</li>
+          <li><strong>Cursor Manager</strong> — singleton persisting across scenes via DontDestroyOnLoad; sets custom crosshair cursor; auto-hides cursor in Game scene and shows it in menu scenes on scene load</li>
+          <li><strong>Main Menu</strong> — Start Game with scene transition, Settings navigation, and Exit; triggers background music on load</li>
         </ul>
       </div>
+
+      <div>
+        <p class="font-bold mb-1">Key achievements and learnings:</p>
+        <ul class="list-disc pl-5 space-y-1">
+          <li>Learned the singleton pattern in Unity and applied it consistently across GameManager, HighScoreManager, CursorManager, and PlayModeSelector</li>
+          <li>Implemented JSON-based leaderboard persistence with runtime-generated UI entries from prefabs</li>
+          <li>Built a cross-system settings panel using static events to keep components decoupled</li>
+          <li>Gained experience managing game state across multiple UI panels without conflicts (pause, game over, settings, high score input)</li>
+          <li>Collaborated in a team of 5 with clearly separated responsibilities per system</li>
+        </ul>
+      </div>
+
       <div class="flex flex-wrap gap-2">
         <span class="badge badge-primary">Unity</span>
         <span class="badge badge-secondary">C#</span>
-        <span class="badge badge-accent">2D Physics</span>
-        <span class="badge badge-neutral">URP</span>
-        <span class="badge badge-primary">Input System</span>
-        <span class="badge badge-secondary">TextMeshPro</span>
-        <span class="badge badge-accent">AudioManager</span>
+        <span class="badge badge-accent">Singleton Pattern</span>
         <span class="badge badge-neutral">JSON Persistence</span>
+        <span class="badge badge-primary">PlayerPrefs</span>
+        <span class="badge badge-secondary">UI System</span>
       </div>
+
     </div>
     <div class="modal-action">
       <button class="btn" onclick="document.getElementById('modal-spaceexplorer').close()">Close</button>
@@ -272,37 +405,49 @@
 <dialog id="modal-studio1946" class="modal">
   <div class="modal-box w-11/12 max-w-2xl max-h-[90vh] overflow-y-auto">
     <h3 class="font-bold text-2xl mb-1">1946 Studio</h3>
-    <p class="text-sm text-base-content/60 mb-4">Photobooth Web App · VNR202 · FPT University</p>
+    <p class="text-sm text-base-content/60 mb-4">Photobooth Web App · Team Project · VNR202 · FPT University</p>
     <div class="space-y-4 text-base">
+
       <p>
         A fully browser-based photobooth application themed around Vietnam's National Resistance War of 1946,
-        developed to commemorate the 79th anniversary of the event (19/12/1946 - 19/12/2025).
-        Users can take webcam photos, apply historical frames, and download the final image, all without leaving the browser.
+        built by a team of 2 for the VNR202 course at FPT University to commemorate the 79th anniversary of the event
+        (19/12/1946 — 19/12/2025). The app runs entirely in the browser with no back-end — users take webcam
+        photos, apply historical frames, add AI-overlaid accessories and stickers, and download the final
+        composite image as a PNG.
       </p>
+
       <div>
-        <p class="font-bold mb-2">Key Features:</p>
+        <p class="font-bold mb-1">My role: Front-End Developer</p>
+        <p class="text-base-content/80 mb-2">Responsible for the following components:</p>
         <ul class="list-disc pl-5 space-y-1">
-          <li>Real-time webcam capture with 3-second countdown and flash effect</li>
-          <li>4 frame layouts: vertical 3-photo, 1 large + 2 small, 2x2 grid, vertical 4-photo strip</li>
-          <li>AI auto-places a soldier hat on detected faces in real-time using MediaPipe FaceMesh</li>
-          <li>Canvas-based photo compositing and high-quality PNG export</li>
-          <li>Vintage UI: aged paper tones, revolutionary red, gold star decorations, classic typography</li>
+          <li><strong>4-Step Flow State Machine</strong> — built the app as a step-by-step flow (Select Type → Capture → Select Frame → Result) managed entirely in React state</li>
+          <li><strong>Camera Component</strong> — real-time webcam feed using <code>getUserMedia</code>, 3-second countdown, flash effect, and per-photo capture with delete support</li>
+          <li><strong>AI Accessory Overlay</strong> — integrated MediaPipe FaceMesh to detect facial landmarks in real-time and auto-place a soldier hat and scarf on detected faces; accessories are baked into the captured photo</li>
+          <li><strong>Frame Preview with Sticker Canvas</strong> — live frame preview with drag-and-drop sticker placement using Fabric.js; stickers are composited into the final export</li>
+          <li><strong>Canvas Compositing &amp; Export</strong> — final image assembled on HTML5 Canvas (photos + frame + stickers) and exported as a high-quality PNG download</li>
         </ul>
       </div>
+
       <div>
-        <p class="font-bold mb-2">Tech Stack:</p>
-        <div class="flex flex-wrap gap-2">
-          <span class="badge badge-primary">React 18</span>
-          <span class="badge badge-secondary">Vite</span>
-          <span class="badge badge-accent">MediaPipe FaceMesh</span>
-          <span class="badge badge-neutral">Canvas API</span>
-          <span class="badge badge-primary">JavaScript</span>
-        </div>
+        <p class="font-bold mb-1">Key achievements and learnings:</p>
+        <ul class="list-disc pl-5 space-y-1">
+          <li>Built a fully functional AI-powered photobooth that runs entirely in the browser with no server</li>
+          <li>Learned and integrated MediaPipe FaceMesh for real-time face landmark detection and accessory placement</li>
+          <li>Gained hands-on experience with Fabric.js for interactive canvas manipulation (drag, scale, rotate stickers)</li>
+          <li>Deepened understanding of the HTML5 Canvas API for multi-layer image compositing and PNG export</li>
+          <li>Deployed to Vercel and used by students at the VNR202 event to commemorate the 79th anniversary</li>
+        </ul>
       </div>
-      <blockquote class="border-l-4 border-primary pl-4 italic text-base-content/70 text-sm">
-        "We would rather sacrifice everything than lose our country and live in slavery."
-        <br><span class="not-italic font-semibold">-- Ho Chi Minh, Call for National Resistance, 19/12/1946</span>
-      </blockquote>
+
+      <div class="flex flex-wrap gap-2">
+        <span class="badge badge-primary">React 18</span>
+        <span class="badge badge-secondary">Vite</span>
+        <span class="badge badge-accent">MediaPipe FaceMesh</span>
+        <span class="badge badge-neutral">Fabric.js</span>
+        <span class="badge badge-primary">Canvas API</span>
+        <span class="badge badge-secondary">JavaScript</span>
+      </div>
+
     </div>
     <div class="modal-action">
       <button class="btn" onclick="document.getElementById('modal-studio1946').close()">Close</button>

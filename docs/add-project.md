@@ -61,7 +61,9 @@ Save as `partials/projects/<yourkey>.html`. Copy this template exactly.
 
 ## Step 2 — Add the dialog to modals.html
 
-Open `partials/projects/modals.html` and add a new block at the bottom:
+Open `partials/projects/modals.html` and add a new block at the bottom.
+
+The modal follows this fixed 4-section structure:
 
 ```html
 <!-- ===== Your Project Modal ===== -->
@@ -71,19 +73,37 @@ Open `partials/projects/modals.html` and add a new block at the bottom:
     <p class="text-sm text-base-content/60 mb-4">Type · Context · Organization</p>
     <div class="space-y-4 text-base">
 
-      <p>Overview paragraph describing the project.</p>
+      <!-- Section 1: Project overview (2-4 sentences) -->
+      <p>
+        What the project is, who it is for, team size, and duration.
+      </p>
 
+      <!-- Section 2: My role + contributions -->
       <div>
-        <p class="font-bold mb-1">My role: Your Role</p>
-        <ul class="list-disc pl-5 mt-2 space-y-1">
-          <li>What you built or contributed</li>
-          <li>Another contribution</li>
+        <p class="font-bold mb-1">My role: Your Role Title</p>
+        <p class="text-base-content/80 mb-2">Brief context sentence (e.g. "Led a team of X. Responsible for:").</p>
+        <ul class="list-disc pl-5 space-y-1">
+          <li><strong>Module Name</strong> — what you built and how</li>
+          <li><strong>Another Module</strong> — what you built and how</li>
         </ul>
       </div>
 
+      <!-- Section 3: Key achievements and learnings -->
+      <div>
+        <p class="font-bold mb-1">Key achievements and learnings:</p>
+        <ul class="list-disc pl-5 space-y-1">
+          <li>Concrete result or deliverable (e.g. delivered X in Y weeks)</li>
+          <li>New technology learned and applied</li>
+          <li>Soft skill gained (teamwork, time management, etc.)</li>
+        </ul>
+      </div>
+
+      <!-- Section 4: Tech stack badges -->
       <div class="flex flex-wrap gap-2">
         <span class="badge badge-primary">Tech 1</span>
         <span class="badge badge-secondary">Tech 2</span>
+        <span class="badge badge-accent">Tech 3</span>
+        <span class="badge badge-neutral">Tech 4</span>
       </div>
 
     </div>
@@ -100,6 +120,8 @@ Open `partials/projects/modals.html` and add a new block at the bottom:
 - Keep `max-h-[90vh] overflow-y-auto` — handles long content with scroll.
 - Close button uses `onclick` with the same id.
 - `modal-backdrop` form enables click-outside-to-close.
+- Always follow the 4-section order: **Overview → My role → Key achievements and learnings → Tech badges**.
+- Do NOT use apostrophes in text.
 
 ---
 
